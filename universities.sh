@@ -1,17 +1,20 @@
 #!/bin/bash
 #
-# menu.sh
-# Bash Menu
+# universities.sh
+# Partnerarbeit Universitäten Ranking
 #
-# 12.12.2018 / Lukas Müller
+# 23.01.2020 / Florian Bohren | Luca Hostettler | Marc Bischof
 #
 # Variablen
-TITLE="**** LSP Menu ****"
+TITLE="**** Universitäten Menu ****"
 
 # Der Array fuer das Menu
 MENU=(
-"Liste alle Shell Programme"
-"Neues Shell Skript erstellen"
+"Funktion: Datenvorschau"
+"Funktion: Datenanalyse"
+"Funktion: Anteil der Colleges"
+"Funktion: Universitäten eines Bundesstaates anzeigen
+"Funktion: Universitäten eines Bundesstaates
 "Ende"
 )
 
