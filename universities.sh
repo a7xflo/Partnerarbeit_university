@@ -3,7 +3,7 @@
 # universities.sh
 # Partnerarbeit Universitäten Ranking
 #
-# 23.01.2020 / Florian Bohren | Luca Hostettler | Marc Bischof
+# 23.01.2020 / Florian Bohren / Marc Bischof / Luca Hostettler
 #
 # Variablen
 TITLE="**** Universitäten Menu ****"
@@ -13,8 +13,8 @@ MENU=(
 "Funktion: Datenvorschau"
 "Funktion: Datenanalyse"
 "Funktion: Anteil der Colleges"
-"Funktion: Universitäten eines Bundesstaates anzeigen
-"Funktion: Universitäten eines Bundesstaates
+"Funktion: Universitäten eines Bundesstaates anzeigen"
+"Funktion: Universitäten eines Bundesstaates"
 "Ende"
 )
 
