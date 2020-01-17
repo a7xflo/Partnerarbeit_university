@@ -11,15 +11,18 @@
 ### Windows users
 
 1. Install Windows Subsystem for Linux
-2. Terminal has problems with spaces in paths when powershell is used, use WSL bash instead. For beta WSL please read this
-3. pathBash refers to BASH binary path in WSL filesystem, not path to wsl.exe/bash.exe
+2. Terminal has problems with spaces in paths when powershell is used, use `WSL bash` instead. For beta WSL please read [this](https://github.com/rogalmic/vscode-bash-debug/issues/93)
+3. pathBash refers to BASH binary path in `WSL` filesystem, not path to `wsl.exe/bash.exe`
 
 ### Mac Users
 
+1. Read here if your mac has `/usr/local/bin/pkill`.
+2. Install `bash` version 4.* and set `pathBash` properly
+
 ### Common
 
-1. sudo apt install csvkit
-2. run universities.sh
+1. `sudo apt install csvkit`
+2. `run universities.sh`
 
 ## Tasks - Universitäten Ranking
 
