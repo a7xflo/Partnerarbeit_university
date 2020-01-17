@@ -21,8 +21,8 @@
 
 ### Common
 
-1. `sudo apt install csvkit`
-2. `run universities.sh`
+1. `apt-get install csvkit`
+2. `bash universities.sh`
 
 ## Tasks - Universitäten Ranking
 

@@ -4,7 +4,12 @@
 # Partnerarbeit Universitäten Ranking
 #
 # 23.01.2020 / Florian Bohren / Marc Bischof / Luca Hostettler
-#
+if dpkg -s csvkit 2>&1 ; then
+    echo "csvkit found"
+else
+    echo "csvkit not found"
+    exit 1
+fi
 # Variablen
 TITLE="**** Universitäten Menu ****"
 # Der Array fuer das Menu
