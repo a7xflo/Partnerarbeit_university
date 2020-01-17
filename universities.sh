@@ -37,7 +37,7 @@ while true; do
   case $ANTWORT in
   0) # wenn die Antort 1 ist tue dies
     echo -e "\n=> ${MENU[0]}\n"
-    ls -l *.sh
+    head -n 10 universities.csv | csvlook
     echo ""
     ;;
   1) # dasselbe fuer die Antwort 2
