@@ -7,8 +7,10 @@
     {
       "type": "bashdb",
       "request": "launch",
-      "name": "Bash-Debug current file",
-      "program": "${file}"
+      "name": "Bash-Debug (hardcoded script name)",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/universities.sh",
+      "args": []
     }
   ]
 }

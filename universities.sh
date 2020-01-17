@@ -7,9 +7,8 @@
 #
 # Variablen
 TITLE="**** Universitäten Menu ****"
-
 # Der Array fuer das Menu
-MENU=(
+declare -a menu=(
     "Funktion: Datenvorschau"
     "Funktion: Datenanalyse"
     "Funktion: Anteil der Colleges"
@@ -17,19 +16,17 @@ MENU=(
     "Funktion: Universitäten eines Bundesstaates"
     "Ende"
 )
-
 # Anzahl Elemente des Arrays MENU
-ANZAHL=${#MENU[*]}
-
+menuCount=${#menu[@]}
 # Beginn des Programmes
 # Schlaufe fuer das Menue
 while true; do
     # Menu ausgeben
     echo "$TITLE"
-    for ((i=0; $i<$ANZAHL; i=$i+1)); do
-        echo "$i) ${MENU[$i]}"
+    for ((i=0; i<$menuCount; i++))
+    do
+        echo "$i) ${menu[$i]}"
     done
-    
     # Eingabe verlangen und einlesen
     echo -n "Auswahl eingeben, mit ENTER bestaetigen: "
     read ANTWORT
