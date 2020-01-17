@@ -1,4 +1,4 @@
-#Aufgabe - Universitäten Ranking:
+# Aufgabe - Universitäten Ranking:
 
 Das Ranking der Universitäten ist zu einer gemeinsamen Aufgabe vieler Institutionen geworden, jede 
 von ihnen schlägt eine andere Rangfolge vor, die auf mehreren gewichteten Kategorien basiert. 
@@ -35,7 +35,7 @@ Ermitteln Sie die Anzahl der Universitäten pro Bundesstaat und geben Sie die Li
 sortiert nach Bundesstaat aus. 
 Spalten der Auswertung: Count, Bundesstaat
 
-#Prepare your Linux
+# Prepare your Linux
 
 1. sudo apt-get install python3-csvkit
 2. sudo apt install python-pip 
