@@ -37,6 +37,4 @@ Spalten der Auswertung: Count, Bundesstaat
 
 # Prepare your Linux
 
-1. sudo apt-get install python3-csvkit
-2. sudo apt install python-pip 
-3. pip install csvkit
+1. sudo apt install csvkit  
