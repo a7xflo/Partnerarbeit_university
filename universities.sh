@@ -28,8 +28,8 @@ menuCount=${#menu[@]}
 while true; do
     # Menu ausgeben
     echo "$TITLE"
-    for ((i=0; i<$menuCount; i++))
-    do
+    for ((i=0; i<$menuCount; i++))  
+	do
         echo "$i) ${menu[$i]}"
     done
     # Eingabe verlangen und einlesen
@@ -44,12 +44,22 @@ while true; do
         ;;
         1) # dasselbe fuer die Antwort 2
             echo -e "\n=> ${MENU[1]}\n"
-            ./addscript.sh einNeuesSkrip.sh
+			echo -e "Suchwort eingeben:"
+			read Suchwort
+			echo ""
+			csvgrep -c 1 -m $Suchwort universities.csv | csvlook
+			echo ""
         ;;
-        2|[eE]|[qQ]) # regulaerer Ausdruck, behandelt sowohl 2 als auch e/E oder q/Q
+        2) # regulaerer Ausdruck, behandelt sowohl 2 als auch e/E oder q/Q
             echo -e "\n=> ${MENU[2]}\n"
             break # while Schleife beenden
         ;;
+		3) #blablabla
+		;;
+		4) #blablablabla
+		;;
+		5) #blablabla
+		;;
         *) # bei allen anderen Antworten kommt dieser Block zum Zug
             echo -e "\n=> Ungueltige Eingabe\n"
         ;;

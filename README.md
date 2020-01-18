@@ -68,5 +68,3 @@ Ermitteln Sie die Anzahl der Universitäten pro Bundesstaat und geben Sie die Li
 sortiert nach Bundesstaat aus.
 Spalten der Auswertung: Count, Bundesstaat
 
-# Prepare your Linux
-
