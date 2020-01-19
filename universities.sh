@@ -18,7 +18,7 @@ declare -a menu=(
     "Funktion: Datenanalyse"
     "Funktion: Anteil der Colleges"
     "Funktion: Universitäten eines Bundesstaates anzeigen"
-    "Funktion: Universitäten eines Bundesstaates"
+    "Funktion: Anzahl Universitäten eines Bundesstaates anzeigen"
     "Ende"
 )
 # Anzahl Elemente des Arrays MENU
@@ -37,12 +37,12 @@ while true; do
     read ANTWORT
     # case Anweisung - je nach Eingabe Verhalten bestimmen
     case $ANTWORT in
-        0) # wenn die Antort 1 ist tue dies
+        0) # Funktion Datenvorschau (Dataset Preview)
             echo -e "\n=> ${MENU[0]}\n"
             head -n 10 universities.csv | csvlook
             echo ""
-        ;;
-        1) # dasselbe fuer die Antwort 2
+        ;; 
+        1) # Funktion Daten Analyse
             echo -e "\n=> ${MENU[1]}\n"
 			echo -e "Suchwort eingeben:"
 			read Suchwort
@@ -50,15 +50,28 @@ while true; do
 			csvgrep -c 1 -m $Suchwort universities.csv | csvlook
 			echo ""
         ;;
-        2) # regulaerer Ausdruck, behandelt sowohl 2 als auch e/E oder q/Q
+        2) # Funktion: Anteil der Colleges
             echo -e "\n=> ${MENU[2]}\n"
-            break # while Schleife beenden
+			
+			# Menge aller Schulen				
+				wc -l universities.csv				
+			
+			# Anzahl Colleges
+				grep -i "college" universities.csv | grep -i -v "university" | wc -l
+				
+			#TODO: Menge / Anzahl COlleges in Variablen legen und Berechnung durchführen
+          
         ;;
-		3) #blablabla
+		3) # Funktion: Universitäten eines Bundesstaates anzeigen.
+			echo -e "\n=> ${MENU[3]}\n"
 		;;
-		4) #blablablabla
+		4) # Funktion: Anzahl Universitäten eines Bundesstaates anzeigen.
+			echo -e "\n=> ${MENU[4]}\n"	
+			cat universities.csv | cut -f3 -d, | sort | uniq -c
 		;;
-		5) #blablabla
+		5) # Ende
+			echo -e "\n=> ${MENU[5]}\n"	
+			break # while Schleife beenden	
 		;;
         *) # bei allen anderen Antworten kommt dieser Block zum Zug
             echo -e "\n=> Ungueltige Eingabe\n"
