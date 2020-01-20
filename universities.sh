@@ -54,16 +54,22 @@ while true; do
             echo -e "\n=> ${MENU[2]}\n"
 			
 			# Menge aller Schulen				
-				wc -l universities.csv				
+				schools=$(wc -l universities.csv | cut -c1-3)			
 			
 			# Anzahl Colleges
-				grep -i "college" universities.csv | grep -i -v "university" | wc -l
+				colleges=$(grep -i "college" universities.csv | grep -i -v "university" | wc -l)
 				
-			#TODO: Menge / Anzahl COlleges in Variablen legen und Berechnung durchführen
+			# Berechnung des Prozentsatzes:
+			#	zwischenresultat=$($colleges/schools)
+			#	$zwischenresultat x 100
+			#   
           
         ;;
 		3) # Funktion: Universitäten eines Bundesstaates anzeigen.
 			echo -e "\n=> ${MENU[3]}\n"
+			echo -e "Suchwort eingeben (Bundesstaat):"
+			read State
+			cat universities.csv | cut -f1,3 -d, | sort -k 2 -t ',' | grep $State | csvlook
 		;;
 		4) # Funktion: Anzahl Universitäten eines Bundesstaates anzeigen.
 			echo -e "\n=> ${MENU[4]}\n"	
