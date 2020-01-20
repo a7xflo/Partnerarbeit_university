@@ -4,12 +4,27 @@
 # Partnerarbeit Universitäten Ranking
 #
 # 23.01.2020 / Florian Bohren / Marc Bischof / Luca Hostettler
-if dpkg -s csvkit 2>&1 ; then
-    echo "csvkit found"
-else
-    echo "csvkit not found"
-    exit 1
-fi
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     
+        machine=Linux
+        if dpkg -s csvkit 2>&1 ; then
+            echo "csvkit found"
+        else
+            echo "csvkit on linux not found"
+        fi
+    ;;
+    Darwin*)    
+        machine=Mac
+        if brew ls --versions csvkit > /dev/null; then
+            echo "csvkit found"
+        else
+            echo "csvkit on mac not found"
+            exit 1
+        fi    
+    ;;
+esac
+
 # Variablen
 TITLE="**** Universitäten Menu ****"
 # Der Array fuer das Menu
