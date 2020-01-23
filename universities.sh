@@ -68,13 +68,13 @@ while true; do
         echo -e "\n=> ${MENU[2]}\n"
 
         # Menge aller Schulen
-        schools=($(wc -l universities.csv))
+        schools=($(tail -n +2 universities.csv | wc -l))
         echo "school count $schools"
         # Anzahl Colleges
-        colleges=($(csvgrep -c Name -r "(?i)college" universities.csv | wc -l))
+        colleges=($(grep -i "college" universities.csv | grep -i -v "university" | wc -l))
         echo "college count $colleges"
         # Berechnung des Prozentsatzes:
-        zwischenresultat=($(bc <<< "scale=2; ($colleges/$schools)"))
+        zwischenresultat=($(bc <<< "scale=4; ($colleges/$schools)"))
         # zwischenresultat=($("scale=2 ; ($colleges / $schools)" | bc))
         prozent=($(bc <<< $zwischenresultat*100))
         echo "$prozent% der schulen sind colleges"
